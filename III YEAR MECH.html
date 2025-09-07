@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Education Portal</title>
+  <style>
+    body { font-family: Arial, sans-serif; text-align: center; background: #f4f4f9; }
+    .container { margin-top: 100px; }
+    .icon { 
+      display: inline-block; 
+      margin: 20px; 
+      padding: 30px; 
+      border: 2px solid #444; 
+      border-radius: 15px; 
+      cursor: pointer; 
+      background: white; 
+      box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
+      transition: 0.3s;
+    }
+    .icon:hover { background: #e0f7fa; transform: scale(1.05); }
+    h2 { color: #333; }
+    input { padding: 10px; width: 200px; margin: 5px; }
+    button { padding: 10px 20px; border: none; background: #007BFF; color: white; border-radius: 5px; cursor: pointer; }
+    button:hover { background: #0056b3; }
+  </style>
+</head>
+<body>
+
+<div id="loginDiv" class="container">
+  <h2>Login</h2>
+  <input type="text" id="username" placeholder="Username"><br>
+  <input type="password" id="password" placeholder="Password"><br>
+  <button onclick="login()">Login</button>
+  <p id="error" style="color:red;"></p>
+</div>
+
+<div id="dashboard" class="container" style="display:none;">
+  <h2>Welcome Vasanth</h2>
+  <div class="icon" onclick="openLink('https://drive.google.com/drive/folders/1TX0-9S2VNDauR9wxBcOwF-fs8eTCc8YP?usp=sharing')">📘 III YEAR MECH</div>
+  </div>
+
+<script>
+function login() {
+  var user = document.getElementById("username").value;
+  var pass = document.getElementById("password").value;
+  
+  if(user === "vasanth" && pass === "anil@143") {
+    document.getElementById("loginDiv").style.display = "none";
+    document.getElementById("dashboard").style.display = "block";
+  } else {
+    document.getElementById("error").innerText = "Invalid username or password!";
+  }
+}
+
+function openLink(url) {
+  window.open(url, "_blank");
+}
+</script>
+
+</body>
+</html>
